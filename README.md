@@ -45,14 +45,32 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/ndarray-base-to-unique-normalized-indices
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import toUniqueNormalizedIndices from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-to-unique-normalized-indices@esm/index.mjs';
+var toUniqueNormalizedIndices = require( '@stdlib/ndarray-base-to-unique-normalized-indices' );
 ```
 
 #### toUniqueNormalizedIndices( indices, max )
@@ -81,8 +99,9 @@ var idx = toUniqueNormalizedIndices( [ 15, -15 ], 10 );
 
 ## Notes
 
--   The function preserves provided index order.
+-   During normalization, a negative index is converted to a nonnegative index according to `max + idx + 1`. If, after normalization, the resolved index is still negative, the value is considered out-of-bounds.
 -   When provided valid indices, the function always returns a "generic" array.
+-   The function preserves provided index order.
 
 </section>
 
@@ -96,14 +115,9 @@ var idx = toUniqueNormalizedIndices( [ 15, -15 ], 10 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@esm/index.mjs';
-import toUniqueNormalizedIndices from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-to-unique-normalized-indices@esm/index.mjs';
+```javascript
+var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
+var toUniqueNormalizedIndices = require( '@stdlib/ndarray-base-to-unique-normalized-indices' );
 
 // Generate a list of random indices:
 var idx = discreteUniform( 100, -15, 15, {
@@ -114,10 +128,6 @@ console.log( idx );
 // Generate a list of unique indices normalized to the interval `[0, 15]`:
 var out = toUniqueNormalizedIndices( idx, 15 );
 console.log( out );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -149,7 +159,7 @@ console.log( out );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
