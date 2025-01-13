@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-01-11)
+## Unreleased (2025-01-13)
 
 <section class="features">
 
@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`efe1f05`](https://github.com/stdlib-js/stdlib/commit/efe1f05049247502e9b124957755ebc6d7974b4e) - **docs:** add note _(by Athan Reines)_
 -   [`838bb5b`](https://github.com/stdlib-js/stdlib/commit/838bb5be71f0e7f5304cc38c7769653df0d03bd1) - **chore:** fix meta data _(by Athan Reines)_
 -   [`494a92b`](https://github.com/stdlib-js/stdlib/commit/494a92bf8a9fba830cbffcc7017097fae36dd73b) - **feat:** add `ndarray/base/to-unique-normalized-indices` _(by Athan Reines)_
 
