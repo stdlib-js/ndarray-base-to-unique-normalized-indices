@@ -52,7 +52,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import toUniqueNormalizedIndices from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-to-unique-normalized-indices@deno/mod.js';
+import toUniqueNormalizedIndices from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-to-unique-normalized-indices@v0.1.0-deno/mod.js';
 ```
 
 #### toUniqueNormalizedIndices( indices, max )
@@ -99,7 +99,7 @@ var idx = toUniqueNormalizedIndices( [ 15, -15 ], 10 );
 
 ```javascript
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@deno/mod.js';
-import toUniqueNormalizedIndices from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-to-unique-normalized-indices@deno/mod.js';
+import toUniqueNormalizedIndices from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-to-unique-normalized-indices@v0.1.0-deno/mod.js';
 
 // Generate a list of random indices:
 var idx = discreteUniform( 100, -15, 15, {
