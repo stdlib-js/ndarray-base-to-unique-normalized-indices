@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,51 +16,33 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MODULES //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
 
-var normalizeIndex = require( '@stdlib/ndarray-base-normalize-index' );
-
-
-// MAIN //
+import { Collection } from '@stdlib/types/array';
 
 /**
 * Returns a list of unique indices after normalizing to the interval `[0,max]`.
 *
-* @param {IntegerArray} indices - indices
-* @param {NonNegativeInteger} max - maximum index
-* @returns {(IntegerArray|null)} normalized indices
+* ## Notes
+*
+* -   If provided an out-of-bounds index, the function returns `null`.
+*
+* @param indices - indices
+* @param max - maximum index
+* @returns normalized indices (or null)
 *
 * @example
-* var idx = toUniqueNormalizedIndices( [ -2, 5 ], 10 );
+* var indices = toUniqueNormalizedIndices( [ -2, 5 ], 10 );
 * // returns [ 9, 5 ]
 *
-* idx = toUniqueNormalizedIndices( [ 15 ], 10 );
+* indices = toUniqueNormalizedIndices( [ -2, 15 ], 10 );
 * // returns null
 */
-function toUniqueNormalizedIndices( indices, max ) {
-	var hash;
-	var out;
-	var idx;
-	var i;
-
-	hash = {};
-	out = [];
-	for ( i = 0; i < indices.length; i++ ) {
-		idx = normalizeIndex( indices[ i ], max );
-		if ( idx < 0 ) {
-			return null;
-		}
-		if ( hash[ idx ] === void 0 ) {
-			hash[ idx ] = true;
-			out.push( idx );
-		}
-	}
-	return out;
-}
+declare function toUniqueNormalizedIndices( indices: Collection<number>, max: number ): Array<number> | null;
 
 
 // EXPORTS //
 
-module.exports = toUniqueNormalizedIndices;
+export = toUniqueNormalizedIndices;
